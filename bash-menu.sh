@@ -162,19 +162,6 @@ draw_SetWriteMode() {
   $ESC_WRITE "\033(B"
 }
 
-# Get script root (as we are sourced from another script, $0 will not be us)
-declare -r menuScript=$(readlink -f ${BASH_SOURCE[0]})
-menuRoot=$(dirname "$menuScript")
-
-# Ensure we can access our dependencies
-if [ ! -s "$menuRoot/bash-draw.sh" ]; then
-  echo "ERROR: Missing required draw.sh script"
-  exit 1
-fi
-
-# Load terminal drawing functions
-. "$menuRoot/bash-draw.sh"
-
 
 ################################
 # Private Variables
