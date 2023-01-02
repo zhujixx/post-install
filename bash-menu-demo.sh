@@ -88,9 +88,9 @@ menuActions=(
 
 ## Override some menu defaults
 menuTitle=" Demo of bash-menu"
-menuFooter="  Navigate via <Home/End/Up/Down> or <Num/Letter>         Select via <Enter>"
+menuFooter=" <Home/End/Up/Down/Num/Letter>              <Enter>=Select"
 menuWidth=60
-menuLeft=15
+menuLeft=10
 menuHighlight=$DRAW_COL_BLUE
 
 
