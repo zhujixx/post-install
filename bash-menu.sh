@@ -308,15 +308,15 @@ menu_HandleInput() {
   done
 
   # Handle known keys
-  local escKey   = `echo -en "\033"`
-  local upKey    = `echo -en "\033[A"`
-  local downKey  = `echo -en "\033[B"`
-  local rightKey = `echo -en "\033[C"`
-  local leftKey  = `echo -en "\033[D"`
-  local homeKey  = `echo -en "\033[1~"`
-  local endKey   = `echo -en "\033[4~"`
-  local home2Key = `echo -en "033OH"`
-  local end2Key  = `echo -en "\033OF"`
+  local    escKey=`echo -en "\033"`
+  local     upKey=`echo -en "\033[A"`
+  local   downKey=`echo -en "\033[B"`
+  local  rightKey=`echo -en "\033[C"`
+  local   leftKey=`echo -en "\033[D"`
+  local   homeKey=`echo -en "\033[1~"`
+  local    endKey=`echo -en "\033[4~"`
+  local  home2Key=`echo -en "033OH"`
+  local   end2Key=`echo -en "\033OF"`
 
   if [[ $key = $upKey ]] || [[ $key = $leftKey ]]; then
     return $before
