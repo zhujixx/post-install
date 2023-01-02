@@ -6,6 +6,15 @@ if [ "$BASH_SOURCE" = "" ]; then
     exit 0
 fi
 
+# Get script root (as we are sourced from another script, $0 will not be us)
+declare -r menuScript=$(readlink -f ${BASH_SOURCE[0]})
+menuRoot=$(dirname "$menuScript")
+
+# Ensure we can access our dependencies
+if [ ! -s "$menuRoot/bash-menu.sh" ]; then
+  wget -O "$menuRoot/bash-menu.sh" https://raw.githubusercontent.com/zhujixx/post-install/main/bash-menu.sh
+fi
+
 #
 # Load bash-menu script
 #
