@@ -50,16 +50,16 @@ function get_key()
   read -sn1 -t "$delay" _x_
   read -sn1 -t "$delay" _y_
   read -sn1 -t "$delay" _z_
-  keys="$_v_$_w_$_x_$_y_$_z_"
+  local keys="$_v_$_w_$_x_$_y_$_z_"
   case $_v_ in
     $'\n')
       printf -v ${1:?} ENTER ;;
     $'\e')
-      __translate_key $keys # "$_v_$_w_$_x_$_y_$_z_"
+      __translate_key $keys
       printf -v ${1:?} $__ESC2KEY
       ;;
     *)
-      printf -v ${1:?} "%s" $keys # "$_v_$_w_$_x_$_y_$_z_"
+      printf -v ${1:?} "%s" $keys
       ;; 
   esac
 }
